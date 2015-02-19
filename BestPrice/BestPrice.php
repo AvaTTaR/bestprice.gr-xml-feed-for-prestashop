@@ -315,34 +315,25 @@ class BestPrice extends Core {
 		if ( $this->Options->getValue( 'map_category' ) == 1 ) {
 			$info = \Tag::getProductTags( $product->id );
 			if ( $info && ! isset( $info[ $this->defaultLang ] ) ) {
-				$categories = array_slice( (array) $info[ $this->defaultLang ], 0, $maxDepth);
+				$categories = (array) $info[ $this->defaultLang ];
 			}
 		} else {
-			$info = \Category::getCategoryInformations( $product->getCategories() );
-			if ( ! is_array( $info ) || empty( $info ) ) {
-				return '';
+			$defaultCat = $product->getDefaultCategory();
+			if($ids){
+				return $defaultCat;
 			}
-			foreach ( (array) $info as $cat ) {
-				$category = new \Category($cat['id_category']);
-				$parents = $category->getParentsCategories($this->defaultLang);
-				if(!empty($parents)){
-					foreach ( $parents as $k => $p ) {
-						array_push( $categories, $ids ? $p['id_category'] : $p['name'] );
-					}
-				}
-				// Todo is there a better way to check for home category?
-				if ( $cat['id_category'] == 2 ) {
-					continue;
-				}
-				array_push( $categories, $ids ? $cat['id_category'] : $cat['name'] );
-			}
+			$category = new \Category($defaultCat);
+
+			do{
+				array_push( $categories, $ids ? $category->id : $category->name[$this->defaultLang] );
+				$category = new \Category($category->id_parent);
+			}while($category->id_parent && !$category->is_root_category);
+
+			$categories = array_reverse($categories);
 		}
 
-		if(is_array($categories)){
-			$categories = array_unique($categories, $ids ? SORT_NUMERIC : SORT_STRING);
-		}
 
-		return is_array( $categories ) ? implode( $ids ? ' - ' : '->', array_reverse(array_slice( $categories, 0, $maxDepth) )) : $categories;
+		return is_array( $categories ) ? implode( $ids ? ' - ' : '->',  $categories)  : $categories;
 	}
 
 	/**
