@@ -5,7 +5,7 @@
  * User: Panagiotis Vagenas <pan.vagenas@gmail.com>
  * Date: 19/2/2015
  * Time: 10:14 πμ
- * Since: TODO ${VERSION}
+ * Since: 150219
  * Copyright: 2015 Panagiotis Vagenas
  */
 
@@ -18,7 +18,7 @@ use XDaRk_v141110\Core;
  * Class BestPrice
  * @package BestPrice
  * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
- * @since TODO ${VERSION}
+ * @since 150219
  */
 class BestPrice extends Core {
 	/**

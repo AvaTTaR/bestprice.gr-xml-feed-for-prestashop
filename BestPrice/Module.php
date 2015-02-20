@@ -5,7 +5,7 @@
  * User: Panagiotis Vagenas <pan.vagenas@gmail.com>
  * Date: 19/2/2015
  * Time: 9:56 πμ
- * Since: TODO ${VERSION}
+ * Since: 150219
  * Copyright: 2015 Panagiotis Vagenas
  */
 
@@ -35,7 +35,7 @@ class Module extends \XDaRk_v141110\Module{
 	/**
 	 * @var string
 	 */
-	public $version = '150219';
+	public $version = '150220';
 	/**
 	 * @var string
 	 */
@@ -77,7 +77,7 @@ class Module extends \XDaRk_v141110\Module{
 	/**
 	 * @return string
 	 * @author Panagiotis Vagenas <pan.vagenas@gmail.com>
-	 * @since 150202
+	 * @since 150219
 	 */
 	protected function xdGetContent() {
 		return $this->Form
