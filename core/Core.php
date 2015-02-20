@@ -95,7 +95,9 @@ if(!class_exists('XDaRk_v141110\Core')) {
 
 		public function __call( $name, $args ) {
 			if ( method_exists( $this, $name ) ) {
-				return $this->{$name}( $args );
+				return call_user_func_array(array($this, $name), $args);
+			} else if (method_exists($this->moduleInstance, $name)){
+				return call_user_func_array(array($this->moduleInstance, $name), $args);
 			}
 
 			$nsName = ( in_array( $name, Core::$instanceClasses ) ? Core::$instanceNamespace : __NAMESPACE__ ) . '\\' . $name;
@@ -215,6 +217,12 @@ if(!class_exists('XDaRk_v141110\Core')) {
 			'!null'           => 'is_null',
 			'null:!empty'     => 'is_null'
 		);
+
+		public function l($string){
+			$nameAr = explode('\\', get_class($this));
+			$className = strtolower(end($nameAr));
+			return $this->moduleInstance->l($string, $className);
+		}
 
 		/**
 		 * Checks function/method arguments against a list of type hints.

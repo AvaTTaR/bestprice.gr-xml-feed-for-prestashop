@@ -31,126 +31,126 @@ class MapOptions extends Panel {
 		$productIdOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Reference Code'
+				'name'  => $this->l('Reference Code')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'EAN-13 or JAN barcode'
+				'name'  => $this->l('EAN-13 or JAN barcode')
 			),
 			array(
 				'value' => 2,
-				'name'  => 'UPC barcode'
+				'name'  => $this->l('UPC barcode')
 			),
 		);
 
-		$this->addSelectField( 'Product ID', 'map_id', $productIdOptions, true, $this->moduleInstance->l('Select the product reference group you are using in your store') );
+		$this->addSelectField( $this->l('Product ID'), 'map_id', $productIdOptions, true, $this->l('Select the product reference group you are using in your store') );
 
 		$productManufacturerOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Product Manufacturer'
+				'name'  => $this->l('Product Manufacturer')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'Product Supplier'
+				'name'  => $this->l('Product Supplier')
 			),
 		);
 
-		$this->addSelectField( 'Product Manufacturer', 'map_manufacturer', $productManufacturerOptions, true, $this->moduleInstance->l('Select the field you are using to specify the manufacturer') );
+		$this->addSelectField( $this->l('Product Manufacturer'), 'map_manufacturer', $productManufacturerOptions, true, $this->l('Select the field you are using to specify the manufacturer') );
 
 		$productLinkOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Use Product Link'
+				'name'  => $this->l('Use Product Link')
 			),
 		);
 
-		$this->addSelectField( 'Product Link', 'map_link', $productLinkOptions, true, $this->moduleInstance->l('URL that leads to product. For upcoming features') );
+		$this->addSelectField( $this->l('Product Link'), 'map_link', $productLinkOptions, true, $this->l('URL that leads to product. For upcoming features') );
 
 		$productImageLinkOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Cover Image'
+				'name'  => $this->l('Cover Image')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'Random Image'
+				'name'  => $this->l('Random Image')
 			),
 		);
 
-		$this->addSelectField( 'Product Image', 'map_image', $productImageLinkOptions, true, $this->moduleInstance->l('Choose if you want to use cover image or some random image from product\'s gallery') );
+		$this->addSelectField( 'Product Image', 'map_image', $productImageLinkOptions, true, $this->l('Choose if you want to use cover image or some random image from product\'s gallery') );
 
 		$productCategoriesOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Categories'
+				'name'  => $this->l('Categories')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'Tags'
+				'name'  => $this->l('Tags')
 			),
 		);
 
-		$this->addSelectField( 'Product Categories', 'map_category', $productCategoriesOptions, true, $this->moduleInstance->l('Choose product tags if and only if no categories are set and instead product tags are in use') );
+		$this->addSelectField( $this->l('Product Categories'), 'map_category', $productCategoriesOptions, true, $this->l('Choose product tags if and only if no categories are set and instead product tags are in use') );
 
 		$productPriceOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Retail price with tax'
+				'name'  => $this->l('Retail price with tax')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'Pre-tax retail price'
+				'name'  => $this->l('Pre-tax retail price')
 			),
 			array(
 				'value' => 2,
-				'name'  => 'Pre-tax wholesale price'
+				'name'  => $this->l('Pre-tax wholesale price')
 			),
 		);
 
-		$this->addSelectField( 'Product Prices', 'map_price_with_vat', $productPriceOptions, true, $this->moduleInstance->l('s option specify the product price that will be used in XML. This should be left to "Retail price with tax"') );
+		$this->addSelectField( $this->l('Product Prices'), 'map_price_with_vat', $productPriceOptions, true, $this->l('This option specify the product price that will be used in XML. This should be left to "Retail price with tax"') );
 
 		$productMPNOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Reference Code'
+				'name'  => $this->l('Reference Code')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'EAN-13 or JAN barcode'
+				'name'  => $this->l('EAN-13 or JAN barcode')
 			),
 			array(
 				'value' => 2,
-				'name'  => 'UPC barcode'
+				'name'  => $this->l('UPC barcode')
 			),
 			array(
 				'value' => 3,
-				'name'  => 'Supplier Reference'
+				'name'  => $this->l('Supplier Reference')
 			),
 		);
 
-		$this->addSelectField( 'Product Manufacturer Reference Code', 'map_mpn', $productMPNOptions, true, $this->moduleInstance->l('This option should reflect product\' manufacturer SKU') );
+		$this->addSelectField( 'Product Manufacturer Reference Code', 'map_mpn', $productMPNOptions, true, $this->l('This option should reflect product\' manufacturer SKU') );
 
 		$productISBNOptions = array(
 			array(
 				'value' => 0,
-				'name'  => 'Reference Code'
+				'name'  => $this->l('Reference Code')
 			),
 			array(
 				'value' => 1,
-				'name'  => 'EAN-13 or JAN barcode'
+				'name'  => $this->l('EAN-13 or JAN barcode')
 			),
 			array(
 				'value' => 2,
-				'name'  => 'UPC barcode'
+				'name'  => $this->l('UPC barcode')
 			),
 			array(
 				'value' => 3,
-				'name'  => 'Supplier Reference'
+				'name'  => $this->l('Supplier Reference')
 			),
 		);
 
-		$this->addSelectField( 'Product ISBN', 'map_isbn', $productISBNOptions, true, $this->moduleInstance->l('This field will be used if you sell books in your store, to specify the ISBN of the book') );
+		$this->addSelectField( $this->l('Product ISBN'), 'map_isbn', $productISBNOptions, true, $this->l('This field will be used if you sell books in your store, to specify the ISBN of the book') );
 
 		// Multiselect from attribute groups
 		$default_lang        = (int) \Configuration::get( 'PS_LANG_DEFAULT' );
@@ -172,7 +172,7 @@ class MapOptions extends Panel {
 			}
 		}
 
-		$this->addMultiSelectField( 'Size Attributes', 'map_size', $productSizesOptions, true, $this->moduleInstance->l('Choose the attributes that you use to specify product sizes. This field is used only if Fashion Store option is enabled') )
-		     ->addMultiSelectField( 'Color Attributes', 'map_color', $productColorOptions, true, $this->moduleInstance->l('Choose the attributes that you use to specify product colors. This field is used only if Fashion Store option is enabled') );
+		$this->addMultiSelectField( $this->l('Size Attributes'), 'map_size', $productSizesOptions, true, $this->l('Choose the attributes that you use to specify product sizes. This field is used only if Fashion Store option is enabled') )
+		     ->addMultiSelectField( $this->l('Color Attributes'), 'map_color', $productColorOptions, true, $this->l('Choose the attributes that you use to specify product colors. This field is used only if Fashion Store option is enabled') );
 	}
 }

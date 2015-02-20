@@ -128,7 +128,7 @@ class XML extends \XDaRk_v141110\XML{
 			if ( empty( $validated ) ) {
 				unset( $array[ $k ] );
 			} else {
-				/* @var \SimpleXMLExtended $product */
+				/* @var SimpleXMLExtended $product */
 				$product = $products->addChild( $this->productElemName );
 
 				foreach ( $validated as $key => $value ) {
@@ -162,7 +162,7 @@ class XML extends \XDaRk_v141110\XML{
 	protected function initSimpleXML() {
 		$this->fileLocation = $this->getFileLocation();
 
-		$this->simpleXML = new \SimpleXMLExtended( '<' . $this->rootElemName . '></' . $this->rootElemName . '>' );
+		$this->simpleXML = new SimpleXMLExtended( '<' . $this->rootElemName . '></' . $this->rootElemName . '>' );
 		$this->simpleXML->addChild( $this->productsElemWrapper );
 
 		return $this;
