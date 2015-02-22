@@ -33,7 +33,7 @@ class MainOptions extends Panel {
 
 		$this->addTextField( $this->l('XML Generate Request Variable Name'), 'request_var' )
 		     ->addTextField( $this->l('XML Generate Request Variable Value'), 'request_var_value' )
-		     ->addTextField( $this->l('XML file path'), 'xml_location', true, $this->l( 'File path relative to your PrestaShop install folder. eg "upload" is the PrestaShop upload dir' ) )
+		     ->addTextField( $this->l('XML file path'), 'xml_location', true, $this->l( 'File path relative to your PrestaShop install folder. eg "upload" is the PrestaShop upload dir' ), '', false, _PS_ROOT_DIR_.'/' )
 		     ->addTextField( $this->l('XML file name'), 'xml_fileName', true, $this->l( 'File name. eg "bestprice.xml"' ) )
 		     ->addTextField( $this->l('Product availability when in stock'), 'avail_inStock', true, $this->l( 'This the product availability when this is in stock. It should match store availability string' ) )
 		     ->addTextField( $this->l('Product availability when out of stock'), 'avail_outOfStock', false, $this->l( 'This the product availability when this is out stock. It should reflect store availability so default is empty' ) )

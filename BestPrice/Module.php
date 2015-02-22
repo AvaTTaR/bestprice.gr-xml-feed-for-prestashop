@@ -84,7 +84,6 @@ class Module extends \XDaRk_v141110\Module{
 		return $this->Form
 			->registerPanel(new MainOptions($this))
 			->registerPanel(new MapOptions($this))
-			->registerPanel(new Information($this))
 			->initialize($this)
 			->generateForm($this->Options->getOptionsArray());
 	}
