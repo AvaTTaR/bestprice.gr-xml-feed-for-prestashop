@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: ecosupplies
+ * Project: bestpricexmlfeed
  * File: Module.php
  * User: Panagiotis Vagenas <pan.vagenas@gmail.com>
  * Date: 19/2/2015
@@ -11,6 +11,7 @@
 
 namespace BestPrice;
 
+use BestPrice\Panels\Information;
 use BestPrice\Panels\MainOptions;
 use BestPrice\Panels\MapOptions;
 
@@ -83,6 +84,7 @@ class Module extends \XDaRk_v141110\Module{
 		return $this->Form
 			->registerPanel(new MainOptions($this))
 			->registerPanel(new MapOptions($this))
+			->registerPanel(new Information($this))
 			->initialize($this)
 			->generateForm($this->Options->getOptionsArray());
 	}

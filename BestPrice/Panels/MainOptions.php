@@ -1,6 +1,6 @@
 <?php
 /**
- * Project: ecosupplies
+ * Project: bestpricexmlfeed
  * File: MainOptions.php
  * User: Panagiotis Vagenas <pan.vagenas@gmail.com>
  * Date: 19/2/2015

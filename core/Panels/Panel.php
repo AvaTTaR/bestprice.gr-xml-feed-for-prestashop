@@ -30,6 +30,10 @@ class Panel extends Core
 	);
 	protected $values = array();
 
+	public function __construct( $moduleInstance ) {
+		parent::__construct( $moduleInstance );
+	}
+
 	/**
 	 * @param $label
 	 * @param $name
